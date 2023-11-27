@@ -3,7 +3,6 @@ Test different frontends
 
 ## Todo
 - remix
-- solid
-- qwik
+- solidstart
+- qwikcity
 - angular
-- svelte

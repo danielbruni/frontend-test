@@ -10,13 +10,15 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tailwind-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "autoprefixer": "^10.0.1",
     "eslint": "^8.48.0",
+    "postcss": "^8",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.3",
-    "@repo/typescript-config": "workspace:*",
-    "turbo": "^1.10.12",
-    "@repo/tailwind-config": "workspace:*",
-    "@repo/eslint-config": "workspace:*"
+    "turbo": "^1.10.12"
   },
   "packageManager": "pnpm@8.11.0"
 }
