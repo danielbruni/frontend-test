@@ -1,8 +1,8 @@
-// since there's no dynamic data here, we can prerender
-// it so that it gets served as a static asset in production
-// export const prerender = true;
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
+import { fetchAnime } from '../utils/fetchAnime';
 
-export const load: PageLoad = () => {
-	return {};
+export const load: PageServerLoad = async () => {
+	const anime = await fetchAnime();
+
+	return { anime };
 };
