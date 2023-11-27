@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnimeCard from '../components/AnimeCard.tsx';
+import LoadMore from '../components/LoadMore.tsx';
+import { fetchAnime } from "../utils/fetchAnime";
+
+const data = await fetchAnime();
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="sm:p-16 py-16 px-8 flex flex-col gap-10">
+		<h2 class="text-3xl text-white font-bold">Explore Anime</h2>
+
+		<section class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+			{data.map((item, index) => (
+			<AnimeCard key={item.id} anime={item} index={index} client:load />
+			))}
+		</section>
+		<LoadMore client:visible />
+	</main>
+</Layout>
+

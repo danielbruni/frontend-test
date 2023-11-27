@@ -1,0 +1,48 @@
+---
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+	<main class="max-w-7xl mx-auto bg-[#0F1117]">
+		<Hero />
+		<slot />
+		<Footer />
+	</main>
+	</body>
+</html>
+
+
+<style is:global>
+	body {
+		background-color: #000;
+	}
+
+	.red-gradient {
+		background: linear-gradient(92deg, #ff5956 2.87%, #ee1e38 96.18%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	:root {
+		color-scheme: dark;
+	}
+</style>
+
